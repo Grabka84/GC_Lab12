@@ -1,5 +1,7 @@
 package gc_lab12;
 
+import java.text.DecimalFormat;
+
 public class Car {
 
 	// fields in class Car
@@ -7,6 +9,7 @@ public class Car {
 	private String model;
 	private int year;
 	private double price;
+	
 	
 	// constructors for all fields
 	public Car() {}
@@ -30,19 +33,19 @@ public class Car {
 	}
 	
 	// getters for all fields
-	public String getMake(String make) {
+	public String getMake() {
 		return make;
 	}
 	
-	public String getModel(String model) {
+	public String getModel() {
 		return model;
 	}
 	
-	public int getYear(int year) {
+	public int getYear() {
 		return year;
 	}
 	
-	public double getPrice(double price) {
+	public double getPrice() {
 		return price;
 	}
 	
@@ -65,7 +68,9 @@ public class Car {
 	
 	@Override
 	public String toString() {
-		return ("The car is a " + year + " " + make + " " + model + " with a list price of " + price);				
+		DecimalFormat ft = new DecimalFormat("$###,###.##");
+		return (make + "\t" + model + "\t" + year + "\t" + ft.format(price));	
+		// couldn't get the return to give me a formatted string with printf, couldn't store the printf to something and then return that
 	}
 	
 }
